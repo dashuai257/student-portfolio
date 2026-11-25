@@ -1,0 +1,667 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Yun Seoha · 포트폴리오 (가상 프로필)</title>
+<meta name="description" content="솔담대학교 경영정보학과 학생 윤서하의 가상 포트폴리오입니다. 모든 이력은 학습 연습용으로 설정되었습니다.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%232f4d3a'/%3E%3Ccircle cx='16' cy='16' r='7' fill='%23f5f0e6'/%3E%3Ccircle cx='16' cy='16' r='3' fill='%23c2603a'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="https://miaoda.feishu.cn/fonts/css2?family=Noto+Sans+KR:wght@300;400;500;700&family=Noto+Serif+KR:wght@600;700&display=swap">
+<style>
+  :root{
+    --cream-bg:#f5f0e6;
+    --cream-card:#fffdf7;
+    --cream-soft:#efe7d7;
+    --green-900:#22382b;
+    --green-700:#2f4d3a;
+    --green-600:#3c6348;
+    --green-100:#e4ecdf;
+    --sand-border:#ddd2bd;
+    --accent:#c2603a;
+    --ink:#2b332d;
+    --muted:#5c675f;
+    --radius:18px;
+    --font-sans:'Noto Sans KR','Apple SD Gothic Neo','Malgun Gothic','맑은 고딕',sans-serif;
+    --font-serif:'Noto Serif KR','Apple SD Gothic Neo','Malgun Gothic',serif;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:var(--font-sans);
+    background:var(--cream-bg);
+    color:var(--ink);
+    line-height:1.7;
+    -webkit-font-smoothing:antialiased;
+  }
+  a{color:inherit;text-decoration:none}
+  button{font-family:inherit;cursor:pointer}
+  img,svg{max-width:100%;display:block}
+
+  :focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:6px}
+
+  .wrap{max-width:1080px;margin:0 auto;padding:0 24px}
+
+  /* ===== 헤더 ===== */
+  header.site{
+    position:sticky;top:0;z-index:40;
+    background:rgba(245,240,230,.92);
+    backdrop-filter:blur(6px);
+    border-bottom:1px solid var(--sand-border);
+  }
+  .nav-bar{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:16px 24px;max-width:1080px;margin:0 auto}
+  .brand{display:flex;align-items:center;gap:10px;font-weight:700;color:var(--green-900)}
+  .brand .dot{width:14px;height:14px;border-radius:50%;background:var(--green-700);display:inline-block}
+  .brand .sub{font-size:12px;color:var(--muted);font-weight:400}
+  nav.menu{display:flex;gap:22px;flex-wrap:wrap}
+  nav.menu a{font-size:14px;color:var(--green-700);padding:6px 2px;border-bottom:2px solid transparent}
+  nav.menu a:hover,nav.menu a:focus-visible{border-bottom-color:var(--accent)}
+  .nav-toggle{display:none}
+
+  /* ===== 히어로 ===== */
+  .hero{padding:64px 0 48px}
+  .hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:40px;align-items:center}
+  .eyebrow{font-size:12px;letter-spacing:.14em;color:var(--accent);font-weight:700;margin-bottom:14px}
+  h1{font-family:var(--font-serif);font-size:clamp(34px,5vw,52px);color:var(--green-900);line-height:1.2;margin-bottom:14px}
+  .hero .name-line{font-size:18px;color:var(--green-700);font-weight:500;margin-bottom:16px}
+  .hero p.lead{font-size:16px;color:var(--muted);max-width:46ch;margin-bottom:20px}
+  .tags{display:flex;flex-wrap:wrap;gap:10px;margin:18px 0 24px}
+  .tag{font-size:13px;background:var(--green-100);color:var(--green-700);border:1px solid var(--sand-border);padding:6px 12px;border-radius:999px}
+  .hero-actions{display:flex;gap:12px;flex-wrap:wrap}
+  .btn{
+    display:inline-flex;align-items:center;gap:8px;
+    border:none;border-radius:12px;padding:12px 18px;font-size:15px;font-weight:500;
+  }
+  .btn-primary{background:var(--green-700);color:#fff}
+  .btn-primary:hover{background:var(--green-600)}
+  .btn-ghost{background:transparent;border:1px solid var(--sand-border);color:var(--green-700)}
+  .btn-ghost:hover{border-color:var(--green-700)}
+  .disclaimer{margin-top:22px;font-size:12.5px;color:var(--muted)}
+
+  /* ===== 장면 SVG 카드 ===== */
+  .scene-card{
+    background:var(--cream-card);
+    border:1px solid var(--sand-border);
+    border-radius:24px;
+    padding:18px;
+    box-shadow:0 18px 40px rgba(47,77,58,.12);
+  }
+  .scene-motion{will-change:transform}
+  .scene-note{font-size:12.5px;color:var(--muted);text-align:center;padding:10px 6px 2px}
+
+  /* ===== 섹션 공통 ===== */
+  section{padding:52px 0}
+  .section-head{margin-bottom:28px}
+  .section-head h2{font-family:var(--font-serif);font-size:clamp(24px,3vw,30px);color:var(--green-900)}
+  .section-head p{color:var(--muted);margin-top:6px;max-width:60ch}
+
+  /* ===== 프로젝트 카드 ===== */
+  .project-grid{display:grid;grid-template-columns:1fr;gap:22px}
+  @media(min-width:768px){.project-grid{grid-template-columns:repeat(3,1fr)}}
+  .project-card{
+    background:var(--cream-card);border:1px solid var(--sand-border);border-radius:var(--radius);
+    padding:24px;display:flex;flex-direction:column;gap:12px;
+  }
+  .project-card .kicker{font-size:12px;color:var(--accent);font-weight:700;letter-spacing:.06em}
+  .project-card h3{font-size:18px;color:var(--green-900);line-height:1.4}
+  .project-card p{font-size:14px;color:var(--muted)}
+  .project-card .meta{font-size:12.5px;color:var(--green-600)}
+  .project-card .spacer{flex:1}
+  .link-btn{
+    align-self:flex-start;background:none;border:none;color:var(--green-700);
+    font-size:14px;font-weight:500;padding:6px 0;display:inline-flex;gap:6px;
+  }
+  .link-btn:hover{color:var(--accent)}
+
+  /* ===== 역량 ===== */
+  .skill-grid{display:grid;grid-template-columns:1fr;gap:18px}
+  @media(min-width:768px){.skill-grid{grid-template-columns:repeat(2,1fr)}}
+  .skill-item{background:var(--cream-card);border:1px solid var(--sand-border);border-radius:var(--radius);padding:22px}
+  .skill-item h3{font-size:16px;color:var(--green-900);margin-bottom:6px}
+  .skill-item p{font-size:14px;color:var(--muted)}
+
+  /* ===== 활동 타임라인 ===== */
+  .timeline{display:grid;gap:0}
+  .tl-item{display:grid;grid-template-columns:120px 24px 1fr;gap:0;padding:18px 0;border-top:1px solid var(--sand-border)}
+  .tl-item:last-child{border-bottom:1px solid var(--sand-border)}
+  .tl-time{font-size:13px;color:var(--green-600);font-weight:500;padding-right:12px}
+  .tl-dot{justify-self:center;position:relative}
+  .tl-dot::before{content:"";width:10px;height:10px;border-radius:50%;background:var(--green-700);margin-top:6px;display:inline-block}
+  .tl-body h3{font-size:16px;color:var(--green-900)}
+  .tl-body p{font-size:14px;color:var(--muted);margin-top:4px}
+
+  /* ===== 연락 ===== */
+  .contact-card{background:var(--green-900);color:var(--cream-bg);border-radius:24px;padding:36px 28px}
+  .contact-card h2{font-family:var(--font-serif);font-size:26px;margin-bottom:10px}
+  .contact-card p{color:#d8e0d4;max-width:52ch}
+  .contact-card a.mail{display:inline-block;margin-top:18px;font-size:18px;color:#fff;border-bottom:1px solid var(--accent)}
+  .contact-card .privacy{margin-top:16px;font-size:12.5px;color:#b9c6b4}
+
+  footer.site{padding:26px 0 40px;font-size:12.5px;color:var(--muted);text-align:center}
+
+  /* ===== 모달 ===== */
+  dialog.detail{
+    border:none;border-radius:20px;padding:0;max-width:560px;width:calc(100% - 40px);
+    margin:auto;
+    background:var(--cream-card);box-shadow:0 30px 70px rgba(20,35,26,.35);
+  }
+  dialog.detail::backdrop{background:rgba(34,56,43,.45)}
+  .modal-inner{padding:28px 28px 24px}
+  .modal-top{display:flex;justify-content:space-between;align-items:flex-start;gap:16px}
+  .modal-top .kicker{font-size:12px;color:var(--accent);font-weight:700;letter-spacing:.06em}
+  .modal-top h3{font-family:var(--font-serif);font-size:22px;color:var(--green-900);margin-top:4px;line-height:1.35}
+  .modal-close{background:var(--cream-soft);border:none;width:38px;height:38px;border-radius:50%;font-size:18px;color:var(--green-900);flex:none}
+  .modal-close:hover{background:var(--sand-border)}
+  .modal-block{margin-top:18px}
+  .modal-block h4{font-size:13px;color:var(--green-600);margin-bottom:4px}
+  .modal-block p{font-size:14.5px;color:var(--ink)}
+  .modal-foot{margin-top:20px;font-size:12.5px;color:var(--muted);border-top:1px solid var(--sand-border);padding-top:14px}
+
+  /* ===== 반응형 ===== */
+  @media(max-width:767px){
+    .hero{padding:36px 0 28px}
+    .hero-grid{grid-template-columns:1fr;gap:28px}
+    .scene-card{order:2}
+    .nav-bar{flex-direction:column;align-items:flex-start;gap:12px;padding:14px 18px}
+    nav.menu{position:static;gap:14px 18px}
+    .tl-item{grid-template-columns:96px 20px 1fr}
+  }
+  @media(max-width:600px){
+    .wrap{padding:0 18px}
+    .project-grid{grid-template-columns:1fr}
+    .skill-grid{grid-template-columns:1fr}
+    .contact-card{padding:28px 22px}
+    .contact-card h2{font-size:22px}
+  }
+
+  /* ===== 저동력 감소 설정 ===== */
+  @media(prefers-reduced-motion:reduce){
+    html{scroll-behavior:auto}
+    .scene-motion{transform:none !important}
+  }
+</style>
+</head>
+<body>
+
+<header class="site">
+  <div class="nav-bar">
+    <a class="brand" href="#about">
+      <span class="dot" aria-hidden="true"></span>
+      <span>모아빛에너지 <span class="sub">Fictional Company</span> × 윤서하</span>
+    </a>
+    <nav class="menu" aria-label="주요 메뉴">
+      <a href="#about">About</a>
+      <a href="#projects">Projects</a>
+      <a href="#skills">Skills</a>
+      <a href="#journey">Journey</a>
+      <a href="#contact">For Moabit</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <!-- ===== About ===== -->
+  <section id="about" class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <p class="eyebrow">DATA &amp; PEOPLE</p>
+        <h1>데이터 속 패턴을,<br>함께 쓰기 좋은 결과로.</h1>
+        <p class="name-line">윤서하 · Yun Seoha</p>
+        <p class="lead">
+          솔담대학교 경영정보학과에 재학 중인 학생입니다. 에너지 데이터를 읽고 문제의 근거를 정리하는
+          데이터 분석가를 목표로 하며, 지원 기업은 모아빛에너지입니다.
+        </p>
+        <div class="tags" aria-label="주요 역량 태그">
+          <span class="tag">Python</span>
+          <span class="tag">SQL</span>
+          <span class="tag">Storytelling</span>
+        </div>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#projects">프로젝트 살펴보기</a>
+          <a class="btn btn-ghost" href="#contact">연락처 보기</a>
+        </div>
+        <p class="disclaimer">
+          본 페이지의 학력·경험·수상은 모두 학습 연습을 위한 가상 설정이며, 실제 인물·기업과 무관합니다.
+        </p>
+      </div>
+
+      <div class="scene-card">
+        <div class="scene-motion" id="sceneMotion" aria-describedby="sceneNote">
+          <svg viewBox="0 0 420 320" role="img" aria-label="듀얼 모니터, 둥근 캐릭터, 나무 책상, 식물, 머그컵이 있는 데이터 작업실 일러스트" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <filter id="softShadow" x="-20%" y="-20%" width="140%" height="140%">
+                <feDropShadow dx="0" dy="6" stdDeviation="6" flood-color="#2f4d3a" flood-opacity="0.18"/>
+              </filter>
+            </defs>
+
+            <!-- 바닥 그림자 -->
+            <ellipse cx="210" cy="282" rx="150" ry="16" fill="#e7ddc8"/>
+
+            <!-- 뒤쪽 책장 -->
+            <g filter="url(#softShadow)">
+              <rect x="42" y="104" width="74" height="128" rx="8" fill="#e9d7b8"/>
+              <rect x="42" y="150" width="74" height="8" fill="#c9a878"/>
+              <rect x="42" y="196" width="74" height="8" fill="#c9a878"/>
+              <!-- 책 책등 -->
+              <rect x="52" y="116" width="10" height="34" rx="2" fill="#3c6348"/>
+              <rect x="66" y="120" width="10" height="30" rx="2" fill="#c2603a"/>
+              <rect x="80" y="118" width="10" height="32" rx="2" fill="#6f9d63"/>
+              <rect x="94" y="122" width="10" height="28" rx="2" fill="#8a9b7a"/>
+              <rect x="54" y="160" width="26" height="30" rx="2" fill="#d9c49a"/>
+              <rect x="86" y="164" width="16" height="26" rx="2" fill="#3c6348"/>
+              <!-- 책장 위 식물 -->
+              <path d="M60 96 q-6 -14 4 -22 q2 12 2 22z" fill="#6f9d63"/>
+              <path d="M70 96 q2 -16 12 -20 q-2 12 -6 20z" fill="#5e8a68"/>
+            </g>
+
+            <!-- 듀얼 모니터 -->
+            <g filter="url(#softShadow)">
+              <!-- 왼쪽 모니터 -->
+              <rect x="138" y="92" width="98" height="74" rx="8" fill="#fbf8f0" stroke="#d9d0bf" stroke-width="2"/>
+              <polyline points="150,148 168,132 184,140 200,118 224,110" fill="none" stroke="#3c6348" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+              <line x1="150" y1="152" x2="224" y2="152" stroke="#ddd2bd" stroke-width="1.5"/>
+              <!-- 오른쪽 모니터 -->
+              <rect x="250" y="92" width="98" height="74" rx="8" fill="#fbf8f0" stroke="#d9d0bf" stroke-width="2"/>
+              <rect x="262" y="140" width="12" height="14" rx="2" fill="#6f9d63"/>
+              <rect x="282" y="128" width="12" height="26" rx="2" fill="#3c6348"/>
+              <rect x="302" y="134" width="12" height="20" rx="2" fill="#c9a878"/>
+              <rect x="322" y="122" width="12" height="32" rx="2" fill="#c2603a"/>
+              <!-- 모니터 받침 -->
+              <rect x="180" y="166" width="16" height="14" fill="#c9a878"/>
+              <rect x="292" y="166" width="16" height="14" fill="#c9a878"/>
+            </g>
+
+            <!-- 책상 -->
+            <g>
+              <rect x="70" y="214" width="290" height="16" rx="6" fill="#c9a878"/>
+              <rect x="70" y="226" width="290" height="5" fill="#b8945f"/>
+              <rect x="86" y="231" width="14" height="48" fill="#b8945f"/>
+              <rect x="330" y="231" width="14" height="48" fill="#b8945f"/>
+            </g>
+
+            <!-- 캐릭터 -->
+            <g filter="url(#softShadow)">
+              <!-- 의자 -->
+              <rect x="176" y="206" width="58" height="10" rx="5" fill="#5e8a68"/>
+              <rect x="184" y="216" width="8" height="34" fill="#4a6f54"/>
+              <!-- 몸통 -->
+              <path d="M188 196 q2 -22 18 -22 q18 0 18 22 l0 20 h-36 z" fill="#5e8a68"/>
+              <!-- 머리 -->
+              <circle cx="206" cy="162" r="25" fill="#f3d3b6"/>
+              <!-- 머리카락 -->
+              <path d="M181 160 q-2 -26 25 -26 q27 0 25 26 q-6 -14 -25 -14 q-19 0 -25 14z" fill="#6b4a36"/>
+              <!-- 눈·입 -->
+              <circle cx="198" cy="162" r="2.4" fill="#2b332d"/>
+              <circle cx="214" cy="162" r="2.4" fill="#2b332d"/>
+              <path d="M199 171 q7 6 14 0" fill="none" stroke="#2b332d" stroke-width="2" stroke-linecap="round"/>
+              <!-- 팔 -->
+              <path d="M188 196 q-14 6 -18 18" fill="none" stroke="#5e8a68" stroke-width="8" stroke-linecap="round"/>
+              <path d="M224 196 q14 4 20 14" fill="none" stroke="#5e8a68" stroke-width="8" stroke-linecap="round"/>
+            </g>
+
+            <!-- 머그컵 -->
+            <g>
+              <rect x="108" y="196" width="26" height="20" rx="5" fill="#c2603a"/>
+              <path d="M134 200 q10 2 0 12" fill="none" stroke="#c2603a" stroke-width="3"/>
+              <line x1="112" y1="192" x2="130" y2="192" stroke="#b8945f" stroke-width="2" stroke-linecap="round"/>
+            </g>
+
+            <!-- 키보드/노트 -->
+            <rect x="246" y="200" width="44" height="10" rx="3" fill="#e9d7b8"/>
+            <rect x="296" y="196" width="26" height="14" rx="3" fill="#fbf8f0" stroke="#d9d0bf"/>
+
+            <!-- 오른쪽 식물 -->
+            <g filter="url(#softShadow)">
+              <path d="M350 150 q-10 -22 2 -34 q4 16 4 34z" fill="#6f9d63"/>
+              <path d="M360 150 q4 -24 18 -28 q-2 16 -10 28z" fill="#5e8a68"/>
+              <path d="M356 150 q2 -18 12 -22 q0 12 -6 22z" fill="#86a97a"/>
+              <path d="M344 150 h30 l-5 34 h-20z" fill="#c98a6a"/>
+            </g>
+
+            <!-- 말풍선 -->
+            <g>
+              <rect x="252" y="30" width="140" height="46" rx="10" fill="#fffdf7" stroke="#d9d0bf" filter="url(#softShadow)"/>
+              <path d="M268 76 l10 10 4 -12z" fill="#fffdf7" stroke="#d9d0bf"/>
+              <text x="262" y="48" font-size="9" fill="#5c675f" font-family="sans-serif">TODAY'S LITTLE QUESTION</text>
+              <text x="262" y="64" font-size="12" fill="#22382b" font-family="sans-serif" font-weight="700">"왜 달라졌을까?"</text>
+            </g>
+
+            <!-- 작은 태그 -->
+            <rect x="60" y="252" width="118" height="20" rx="10" fill="#e4ecdf"/>
+            <text x="72" y="266" font-size="10" fill="#3c6348" font-family="sans-serif">a little data studio</text>
+          </svg>
+        </div>
+        <p class="scene-note" id="sceneNote">데이터 작업실을 표현한 일러스트입니다. PC에서는 마우스를, 페이지에서는 스크롤에 가볍게 반응합니다.</p>
+        <div style="text-align:center;margin-top:10px">
+          <button type="button" class="btn btn-ghost" id="motionToggle" aria-pressed="false" aria-controls="sceneMotion">움직임 멈춤</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Projects ===== -->
+  <section id="projects">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>Selected Projects</h2>
+        <p>프로젝트 제목뿐 아니라 문제·역할·방법·결과와 배움을 함께 정리했습니다. 아래 내용은 모두 가상 설정입니다.</p>
+      </div>
+      <div class="project-grid" id="projectGrid"></div>
+    </div>
+  </section>
+
+  <!-- ===== Skills ===== -->
+  <section id="skills">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>Skills</h2>
+        <p>도구와 실제로 사용한 경험을 기준으로 정리했습니다.</p>
+      </div>
+      <div class="skill-grid">
+        <div class="skill-item">
+          <h3>Python</h3>
+          <p>Pandas 등으로 데이터 정제와 간단한 분석을 경험했습니다. 결측치와 이상치를 확인하는 과정을 익혔습니다.</p>
+        </div>
+        <div class="skill-item">
+          <h3>SQL</h3>
+          <p>테이블 조인·집계·필터링으로 필요한 데이터를 추출하고, 집계 기준을 정리하는 연습을 했습니다.</p>
+        </div>
+        <div class="skill-item">
+          <h3>데이터 시각화</h3>
+          <p>표와 그래프로 결과을 전달하는 데 익숙하며, 읽는 사람이 한눈에 이해할 수 있도록 단순화합니다.</p>
+        </div>
+        <div class="skill-item">
+          <h3>Storytelling</h3>
+          <p>결과를 문제·근거·결과 순서로 정리해, 비전문가도 따라올 수 있는 설명을 만듭니다.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Journey ===== -->
+  <section id="journey">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>Journey</h2>
+        <p>기간·역할·배운 점을 기준으로 활동을 정리했습니다. 모두 가상의 활동 기록입니다.</p>
+      </div>
+      <div class="timeline">
+        <div class="tl-item">
+          <div class="tl-time">2025</div>
+          <div class="tl-dot" aria-hidden="true"></div>
+          <div class="tl-body">
+            <h3>여울 데이터랩 인턴 (가상)</h3>
+            <p>전력 사용량 대시보드 초안을 구성하며, 반복 집계를 시각화 화면으로 연결하는 흐름을 담당했습니다.</p>
+          </div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-time">2025</div>
+          <div class="tl-dot" aria-hidden="true"></div>
+          <div class="tl-body">
+            <h3>별숲 데이터 챌린지 (가상)</h3>
+            <p>캠퍼스 전력 수요 예측 과제에 참여했으며, 우수상은 가상 수상 설정입니다.</p>
+          </div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-time">2024–2025</div>
+          <div class="tl-dot" aria-hidden="true"></div>
+          <div class="tl-body">
+            <h3>도담 스터디 그룹</h3>
+            <p>SQL과 기초 통계 스터디를 함께 꾸려, 질문을 주고받으며 개념을 정리했습니다.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Contact ===== -->
+  <section id="contact">
+    <div class="wrap">
+      <div class="contact-card">
+        <h2>함께 이야기 나누고 싶습니다</h2>
+        <p>모아빛에너지의 데이터 업무에 관심이 있습니다. 공개 가능한 채널로 연락 주시면 답변드리겠습니다.</p>
+        <a class="mail" href="mailto:seoha@example.com">seoha@example.com</a>
+        <p class="privacy">학번·집주소·비밀번호·API 키는 공개 페이지에 올리지 않습니다. 위 이메일은 예시 주소입니다.</p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site">
+  AI PORTFOLIO LAB · 본 페이지는 학습 연습용 가상 프로필입니다.
+</footer>
+
+<!-- 프로젝트 상세 모달 -->
+<dialog class="detail" id="detailDialog" aria-labelledby="modalTitle">
+  <div class="modal-inner">
+    <div class="modal-top">
+      <div>
+        <p class="kicker" id="modalKicker"></p>
+        <h3 id="modalTitle"></h3>
+      </div>
+      <button type="button" class="modal-close" id="modalClose" aria-label="닫기">×</button>
+    </div>
+    <div id="modalBlocks"></div>
+    <p class="modal-foot">이 프로젝트는 학습 연습을 위한 가상 설정입니다. 실제 성능 수치나 수상 실적을 의미하지 않습니다.</p>
+  </div>
+</dialog>
+
+<script>
+(function(){
+  "use strict";
+
+  /* ===== 프로젝트 데이터 ===== */
+  var PROJECTS = [
+    {
+      kicker:"대회 · 별숲 데이터 챌린지",
+      title:"별숲 캠퍼스 전력 수요 예측",
+      summary:"내일의 캠퍼스 전력 사용량을 예측해 운영 계획에 도움을 줄 수 있는지 탐색한 과제입니다.",
+      tags:["Python","시계열","가상 대회"],
+      blocks:[
+        {h:"문제", p:"내일의 캠퍼스 전력 사용량을 가늠하는 운영 계획에 도움을 줄 수 있을까? 예시 데이터로 구성한 가상 프로젝트입니다."},
+        {h:"내 역할", p:"자료 정리와 시간 기준 검증 설계를 맡았다는 가상 설정입니다."},
+        {h:"방법", p:"날씨·요일·과거 사용량을 비교하고, 시간 순서를 지킨 학습·검증 구간을 구성했습니다."},
+        {h:"결과와 배움", p:"별숲 데이터 챌린지 우수상이라는 가상 수상 예시입니다. 실제 성능 수치는 제시하지 않으며, 미래 데이터가 학습에 섞이지 않도록 확인하는 중요성을 보여줍니다."}
+      ]
+    },
+    {
+      kicker:"협업 · 모아빛에너지 과제",
+      title:"모아빛 에너지 고객 이탈 예측",
+      summary:"요금제 변경 후 이탈이 예상되는 고객을 설명 가능한 기준으로 찾아보는 탐색 과제입니다.",
+      tags:["SQL","분류","가상 과제"],
+      blocks:[
+        {h:"문제", p:"에너지 요금제 변경 후 이탈이 예상되는 고객을 미리 찾아낼 수 있을까? 고객 응답은 가상 데이터입니다."},
+        {h:"내 역할", p:"고객 특성과 청구 내역 테이블을 정제하고, 분석에 쓰일 변수를 정리했습니다."},
+        {h:"방법", p:"Python·SQL로 연속 변수와 범주 변수를 구분하고, 이탈 여부 기준을 명확히 정리했습니다."},
+        {h:"결과와 배움", p:"위험 고객군을 설명 가능한 기준으로 묶는 연습을 했습니다. 모델 성능과 결과는 모두 가상입니다."}
+      ]
+    },
+    {
+      kicker:"인턴 · 여울 데이터랩",
+      title:"전력 사용량 대시보드 초안",
+      summary:"반복되는 사용량 집계를 빠르게 확인할 수 있도록, 지표를 시각화 화면으로 묶는 연습을 했습니다.",
+      tags:["대시보드","SQL","시각화"],
+      blocks:[
+        {h:"문제", p:"매주 반복되는 사용량 집계를 더 빠르게 들여다볼 수 있는 방법이 필요했습니다."},
+        {h:"내 역할", p:"인턴 실습으로 주간 지표 정리와 시각화 초안을 담당했다는 가상 설정입니다."},
+        {h:"방법", p:"SQL 집계 결과를 대시보드 카드와 연결하는 흐름을 구성하고, 지표 간 관계를 정리했습니다."},
+        {h:"결과와 배움", p:"분석 결과를 비전문가도 이해하기 쉬운 화면으로 옮기는 과정을 배웠습니다. 해당 경험은 가상입니다."}
+      ]
+    }
+  ];
+
+  /* ===== 카드 렌더링 ===== */
+  var grid = document.getElementById("projectGrid");
+  var cards = PROJECTS.map(function(project, idx){
+    var card = document.createElement("article");
+    card.className = "project-card";
+    var tagsHtml = project.tags.map(function(t){ return '<span class="tag">'+t+'</span>'; }).join("");
+    card.innerHTML =
+      '<p class="kicker"></p>' +
+      '<h3></h3>' +
+      '<p class="summary"></p>' +
+      '<div class="tags">'+tagsHtml+'</div>' +
+      '<div class="spacer"></div>' +
+      '<button type="button" class="link-btn" data-idx="'+idx+'">상세 보기 <span aria-hidden="true">→</span></button>';
+    card.querySelector(".kicker").textContent = project.kicker;
+    card.querySelector("h3").textContent = project.title;
+    card.querySelector(".summary").textContent = project.summary;
+    return card;
+  });
+  cards.forEach(function(c){ grid.appendChild(c); });
+
+  /* ===== 모달 ===== */
+  var dialog = document.getElementById("detailDialog");
+  var modalKicker = document.getElementById("modalKicker");
+  var modalTitle = document.getElementById("modalTitle");
+  var modalBlocks = document.getElementById("modalBlocks");
+  var modalClose = document.getElementById("modalClose");
+  var lastTrigger = null;
+
+  function openModal(idx){
+    var p = PROJECTS[idx];
+    modalKicker.textContent = p.kicker;
+    modalTitle.textContent = p.title;
+    modalBlocks.innerHTML = "";
+    p.blocks.forEach(function(b){
+      var block = document.createElement("div");
+      block.className = "modal-block";
+      var h = document.createElement("h4");
+      h.textContent = b.h;
+      var para = document.createElement("p");
+      para.textContent = b.p;
+      block.appendChild(h);
+      block.appendChild(para);
+      modalBlocks.appendChild(block);
+    });
+    lastTrigger = document.activeElement;
+    if (typeof dialog.showModal === "function") {
+      dialog.showModal();
+    } else {
+      dialog.setAttribute("open","");
+    }
+    modalClose.focus();
+  }
+  function closeModal(){
+    if (typeof dialog.close === "function") {
+      dialog.close();
+    } else {
+      dialog.removeAttribute("open");
+    }
+    if (lastTrigger) { lastTrigger.focus(); lastTrigger = null; }
+  }
+
+  grid.addEventListener("click", function(e){
+    var btn = e.target.closest(".link-btn");
+    if (btn) openModal(Number(btn.dataset.idx));
+  });
+  modalClose.addEventListener("click", closeModal);
+  dialog.addEventListener("click", function(e){
+    if (e.target === dialog) closeModal();
+  });
+  document.addEventListener("keydown", function(e){
+    if (e.key === "Escape" && dialog.open) closeModal();
+  });
+
+  /* ===== 장면 애니메이션 (requestAnimationFrame) ===== */
+  var scene = document.getElementById("sceneMotion");
+  var toggle = document.getElementById("motionToggle");
+  var reduced = window.matchMedia("(prefers-reduced-motion: reduce)");
+  var finePointer = window.matchMedia("(pointer: fine)");
+
+  var state = {
+    paused:false,
+    running:false,
+    rafId:null,
+    mouseX:0,        // -1 ~ 1
+    mouseTX:0,
+    scrollBase:window.scrollY,
+    startTs:null
+  };
+
+  function sceneTransform(ts){
+    // 1) 부유: 약 7초 주기, 위아래 약 5px
+    var period = 7000;
+    var floatY = 5 * Math.sin((ts / period) * Math.PI * 2);
+
+    // 2) 마우스 추적: PC 정밀 포인터에서만. 이동 약 8px, 기울기 최대 4도
+    state.mouseX += (state.mouseTX - state.mouseX) * 0.06;
+    var translateX = finePointer.matches ? state.mouseX * 8 : 0;
+    var rotate = finePointer.matches ? Math.max(-4, Math.min(4, state.mouseX * 4)) : 0;
+
+    // 3) 스크롤: 위로 최대 20px
+    var maxScroll = 20;
+    var scrollUp = Math.min(window.scrollY * 0.05, maxScroll);
+
+    var ty = floatY - scrollUp;
+    scene.style.transform = "translate3d(" + translateX.toFixed(2) + "px," + ty.toFixed(2) + "px,0) rotate(" + rotate.toFixed(2) + "deg)";
+  }
+
+  function loop(ts){
+    if (!state.running) return;
+    if (state.startTs === null) state.startTs = ts;
+    sceneTransform(ts - state.startTs);
+    state.rafId = requestAnimationFrame(loop);
+  }
+
+  function startLoop(){
+    if (state.running || state.paused || reduced.matches) return;
+    state.running = true;
+    state.startTs = null;
+    state.rafId = requestAnimationFrame(loop);
+  }
+  function stopLoop(){
+    state.running = false;
+    if (state.rafId) cancelAnimationFrame(state.rafId);
+    state.rafId = null;
+  }
+
+  function updateToggleLabel(){
+    toggle.textContent = state.paused ? "움직임 다시 시작" : "움직임 멈춤";
+    toggle.setAttribute("aria-pressed", String(state.paused));
+  }
+
+  toggle.addEventListener("click", function(){
+    state.paused = !state.paused;
+    if (state.paused) {
+      stopLoop();
+      scene.style.transform = "translate3d(0,0,0)";
+    } else {
+      startLoop();
+    }
+    updateToggleLabel();
+  });
+
+  // 마우스 추적: 정밀 포인터(데스크톱)에서만 등록
+  if (finePointer.matches) {
+    window.addEventListener("mousemove", function(e){
+      var cx = window.innerWidth / 2;
+      state.mouseTX = Math.max(-1, Math.min(1, (e.clientX - cx) / cx));
+    }, {passive:true});
+  }
+
+  // 탭이 숨겨지면 애니메이션을 멈추고, 다시 보이면 재개
+  document.addEventListener("visibilitychange", function(){
+    if (document.hidden) {
+      stopLoop();
+    } else if (!state.paused && !reduced.matches) {
+      startLoop();
+    }
+  });
+
+  // 저동력 설정 변경에 즉시 대응
+  reduced.addEventListener("change", function(){
+    if (reduced.matches) {
+      stopLoop();
+      scene.style.transform = "none";
+    } else if (!state.paused) {
+      startLoop();
+    }
+  });
+
+  // 초기 시작
+  if (!reduced.matches) startLoop();
+  updateToggleLabel();
+})();
+</script>
+</body>
+</html>
